@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="finals.css">
+  <style>
+    body {
+      background-image: url('nikeeeebg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each item here */
+      margin: 10px;
+    }
+
+    .about-list,
+    .services-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: justify;
+    }
+
+    .about-list li,
+    .services-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .about-list li::before,
+    .services-list li::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+  </style>
+  <title>NIKE</title>
+  <script src="finals.js"></script>
+  <script>
+    var cartItems = [];
+    var totalPrice = 0;
+
+    function addToCart(product, price) {
+      cartItems.push(product);
+      totalPrice += price;
+      alert(product + " is added to cart!");
+    }
+
+    function displayCart() {
+      var cartElement = document.getElementById("cart");
+      cartElement.innerHTML = "";
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemElement = document.createElement("p");
+        itemElement.textContent = item;
+        cartElement.appendChild(itemElement);
+      }
+    }
+
+    function checkout() {
+      alert("Thanks for purchasing! Total Price: " + "₱" + totalPrice);
+    }
+  </script>
+</head>
+
+<body>
+  <center>
+    <header>
+      <h1>Welcome to the Nike shop!</h1>
+    </header>
+    <main class="main-container">
+      <div class="product Nike Air Force 1 '07 FlyEase">
+        <img src="shoes1.jpg" width="226" height="370" alt="cream">
+        <h3>Nike Air Force 1 '07 FlyEase</h3>
+        <p>Men's Shoes</p>
+        <p>Price: 6,195 PESOS</p>
+        <button class="btn" onclick="addToCart('Nike Air Force 1 \'07 FlyEase', 6195)">Add to Cart</button>
+      </div>
+      <div class="product Nike Air Max Pulse">
+        <img src="shoes2.png" width="226" height="370" alt="Nike Air Max Pulse">
+        <h3>Nike Air Max Pulse</h3>
+        <p>Men's Shoes</p>
+        <p>Price: 8,395 PESOS</p>
+        <button class="btn4" onclick="addToCart('Nike Air Max Pulse', 8395)">Add to Cart</button>
+      </div>
+      <div class="product Nike Dunk High Retro Premium">
+        <img src="shoes3.png" width="226" height="370" alt="MATCHA">
+        <h3>Nike Dunk High Retro Premium</h3>
+        <p>Men's Shoes</p>
+        <p>Price: 7,095 PESOS</p>
+        <button class="btn" onclick="addToCart('Nike Dunk High Retro Premium', 7095)">Add to Cart</button>
+      </div>
+      <div class="product Nike Court Vision Low">
+        <img src="shoes4.png" width="226" height="370" alt="MATCHA">
+        <h3>Nike Court Vision Low</h3>
+        <p>Men's Shoes</p>
+        <p>Price: 3,695 PESOS</p>
+        <button class="btn" onclick="addToCart('Nike Court Vision Low', 3,695)">Add to Cart</button>
+      </div>
+      <div class="product Nike Air Force 1 '07">
+        <img src="shoes5.png" width="226" height="370" alt="MATCHA">
+        <h3>Nike Air Force 1 '07</h3>
+        <p>Black color of this tote bag</p>
+        <p>Price: 5,495 PESOS</p>
+        <button class="btn" onclick="addToCart('Nike Air Force 1 \'07', 5495)">Add to Cart</button>
+      </div>
+      <div class="product Nike Dunk Mid">
+        <img src="shoes6.png" width="226" height="370" alt="MATCHA">
+        <h3>Nike Dunk Mid</h3>
+        <p>Black color of this tote bag</p>
+        <p>Price: 6,395 PESOS</p>
+        <button class="btn" onclick="addToCart('Nike Dunk Mid', 6395)">Add to Cart</button>
+      </div>
+    </main>
+    <div id="cart"></div>
+    
+    
+    <button class="btn3" onclick="checkout()">CHECKOUT</button>
+  </center>
+
+  <footer>
+    <p>
+      <b>
+        <font face="tahoma">
+          <center>
+            <hr>
+            <table>
+              <tr>
+                <th>
+                  <ul class="about-list">
+                    <li>ABOUT</li>
+                    <li>News</li>
+                    <li>Careers</li>
+					<li>Investors</li>
+					<li>Sustainability</li>
+                  </ul>
+                </th>
+                <th>
+                  <ul class="services-list">
+                    <li>GET HELP</li>
+                    <li>Delivery</li>
+                    <li>Returns</li>
+					<li>Payment Options</li>
+					<li>Contact Us</li>
+                  </ul>
+                </th>
+              </tr>
+            </table>
+
+            <h2>
+              <font face="Tahoma"> Follow Us!</font>
+            </h2>
+
+            <a href="https://web.facebook.com/nike/?_rdc=1&_rdr" target="blank">
+              <img src="fbb.png" width="50" height="50"></a>
+
+            <a href="https://www.instagram.com/nike/?hl=en" target="_blank">
+              <img src="ig.png" width="50" height="50"></a>
+
+            <a href="https://shopee.ph/nikeofficial" target="_blank">
+              <img src="shopee.png" width="50" height="50"></a>
+
+            <p class="copyright">&#169 2023 Nike, Inc. All Rights Reserved</p>
+          </center>
+        </font>
+      </b>
+    </p>
+  </footer>
+</body>
+</html>
